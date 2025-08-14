@@ -1,0 +1,176 @@
+<div class="recipegram-home">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        <i class="fas fa-utensils"></i> RecipeGram
+      </a>
+      <div class="ms-auto d-flex align-items-center">
+        <button class="btn btn-glass me-3 text-dark" routerLink="/login">
+          Login
+        </button>
+        <button class="btn btn-gold" routerLink="/register">Sign Up</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="animate__animated animate__fadeInDown">
+        Share Your Culinary Masterpieces
+      </h1>
+      <p class="animate__animated animate__fadeIn">
+        Join a community of food enthusiasts and discover recipes that will
+        transform your cooking experience.
+      </p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <button
+          class="btn btn-gold animate__animated animate__fadeInUp"
+          routerLink="/recipes"
+        >
+          Explore Recipes
+        </button>
+        <button
+          class="btn btn-outline-light animate__animated animate__fadeInUp animate-delay-1"
+          routerLink="/about"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating food icons -->
+    <i
+      class="fas fa-ice-cream fa-3x floating-icon floating"
+      style="top: 20%; left: 10%"
+    ></i>
+    <i
+      class="fas fa-pizza-slice fa-4x floating-icon floating-2"
+      style="top: 70%; right: 15%"
+    ></i>
+    <i
+      class="fas fa-coffee fa-3x floating-icon floating-3"
+      style="top: 30%; right: 10%"
+    ></i>
+  </section>
+
+  <!-- Recipe Cards -->
+  <section class="recipes">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Recipes</h2>
+        <p>Handpicked selections from our culinary community</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" *ngFor="let recipe of featuredRecipes">
+          <div class="card">
+            <img
+              [src]="recipe.image"
+              class="card-img-top"
+              [alt]="recipe.title"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ recipe.title }}</h5>
+              <p class="card-text">{{ recipe.description }}</p>
+            </div>
+            <div class="card-footer">
+              <span
+                ><i class="fas fa-clock me-2"></i>{{ recipe.time }} min</span
+              >
+              <span class="badge-gold"
+                ><i [class]="recipe.icon"></i>{{ recipe.category }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="text-secondary">Ready to Share Your Recipes?</h2>
+        <p>
+          Join our community of culinary artists and food enthusiasts today.
+          Whether you're a home cook or a professional chef, RecipeGram is the
+          perfect platform to showcase your talent.
+        </p>
+        <div class="cta-buttons">
+          <button
+            class="cta-btn cta-btn-primary text-white"
+            routerLink="/register"
+          >
+            Get Started
+          </button>
+          <button
+            class="cta-btn cta-btn-secondary text-white"
+            routerLink="/about"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <a href="#" class="footer-logo"
+            ><i class="fas fa-utensils"></i>RecipeGram</a
+          >
+          <p>
+            RecipeGram is a social platform for food enthusiasts to share,
+            discover, and celebrate culinary creations from around the world.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/recipes">Recipes</a></li>
+            <li><a routerLink="/categories">Categories</a></li>
+            <li><a routerLink="/chefs">Chefs</a></li>
+            <li><a routerLink="/about">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Categories</h3>
+          <ul>
+            <li><a routerLink="/categories/breakfast">Breakfast</a></li>
+            <li><a routerLink="/categories/lunch">Lunch</a></li>
+            <li><a routerLink="/categories/dinner">Dinner</a></li>
+            <li><a routerLink="/categories/desserts">Desserts</a></li>
+            <li><a routerLink="/categories/vegan">Vegan</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Support</h3>
+          <ul>
+            <li><a routerLink="/contact">Contact Us</a></li>
+            <li><a routerLink="/faq">FAQs</a></li>
+            <li><a routerLink="/privacy">Privacy Policy</a></li>
+            <li><a routerLink="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; {{ currentYear }} RecipeGram. All rights reserved. | Designed
+          with <i class="fas fa-heart"></i> for food lovers
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
